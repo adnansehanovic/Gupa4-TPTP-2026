@@ -1,3 +1,13 @@
+/* -------------------------------------------------------- */
+
+
+
+/*                       Index html                         */
+
+
+
+/* -------------------------------------------------------- */
+
 body {
     margin: 0;
     font-family: 'Montserrat' , sans-serif;
@@ -44,10 +54,6 @@ body {
     transition: 0.5s;
 }
 
-
-
-
-
 /* footer */
 .glavni-footer {
     background: black;
@@ -61,4 +67,115 @@ body {
     color: #c40000;
     text-decoration: none;
     margin: 0 10px;
+}
+
+/* -------------------------------------------------------- */
+
+
+
+/*                      Sadrzaj html                        */
+
+
+
+/* -------------------------------------------------------- */
+
+/* Gemini je pomogao
+Pozadinska slika zauzima citavu sirinu ekrana
+i visinu od 50% viewport visine
+overflow hidden "sakrije" dio slike ako ode preko granice kontejnera
+relative position restriktira tamni sloj preko slike na samu sliku */
+.slika-pola {
+    width: 100%;
+    height: 50vh; 
+    overflow: hidden;
+    position: relative;
+}
+
+/* Gemini je pomogao
+Slika zauzima citav prostor kontejnera
+object fit odjece dio slike koji ode preko granice kontejnera*/
+.slika-pola img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Gemini je pomogao
+Stavlja zatamnjenje preko slike
+::after je pseudo-element koji pravi kontener bez ikakvog teksta zbog cotent:""
+aposolutna pozicija i top 0 left 0, ga forsira da se pozicionira u gornjem lijevom uglu
+prosiri se preko cijelog kontejnera, i boja se stavlja kao crna i providnost 60%
+z-index: 10 stavlja ovaj sloj iznad slike, ali ispod teksta (koji ce imati z-index: 20); */
+.slika-pola::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+/* Gemini je dao prijedlog za marginu auto sa lijeve i desne strane
+sto centrira kontejner na stranici,
+i za line height sto mijenja vertikalni razmak izmedu linija*/
+.historija-kontejner {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: left;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Gemini je dao prijedlog za crnu liniju ispod naslova */
+.historija-kontejner h2 {
+    color: #c40000;
+    font-size: 32px;
+    border-bottom: 3px solid #000;
+    padding-bottom: 10px;
+}
+
+.historija-kontejner h3 {
+    color: #000;
+    margin-top: 30px;
+}
+
+/* Gemini je dao prijedlog za crvenu liniju ispod naslova */
+.historija-kontejner .istaknuti-podnaslov {
+    margin-top: 40px;
+    border-bottom: 2px solid #c40000;
+    padding-bottom: 5px;
+}
+
+/* Gemini je pomogao
+Zauzima citav prostor kontejnera 
+border collapse spaja ivice ćelija
+margin top i bottom odvaja tabelu od ivica
+stavlja tacan font, i bijelu pozadinsku boju
+box shadow stavlja sjenku, 0 znaci da ne ide lijevo ni desno
+4px znaci da ide dole 4 pixela, 10px je zamućenje
+boja stavlja kao crna i providnost 90% */
+.tabela-sloboda {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Blaga sjenka za 3D efekat */
+    background-color: white;
+}
+
+.tabela-sloboda th, .tabela-sloboda td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabela-sloboda th {
+    background-color: #c40000;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
 }
