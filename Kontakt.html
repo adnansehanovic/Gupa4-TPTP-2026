@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <title>FK Sloboda Tuzla</title> <!-- title dodaje tekst u tabu -->
+    <link rel="icon" type="image/png" href="SlobodaLogo.png"> <!-- link sluzi sa povezivanje sa vanjskim fajlom, rel icon nam govori da je to ikonica u tabu, type govori kakav je to tip ikonice u nasem slucaju slika png -->
+    <link rel="stylesheet" href="css/tptpstil.css"> <!-- povezivanje sa css -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> <!-- povezivanje custom fonta -->
+</head>
+
+<body>
+<nav class="meni"> <!-- css menija -->
+    <div class="logo"> <!-- css logo -->
+        <img src="SlobodaLogo.png" alt="Logo FK Sloboda">
+    </div>
+    <div class="linkovi"> <!-- css linkova -->
+        <a href="index.html">Početna</a> <!-- dodavanje linkova, href salje na lokaciju -->
+        <a href="Sadrzaj.html">O Nama</a>
+        <a href="Kontakt.html">Kontakt</a>
+        <a href="https://github.com/adnansehanovic/Gupa4-TPTP-2026" target="_blank">GitHub</a>
+    </div>
+</nav>
+
+<div class="kontakt-kontejner">
+    <h2>Kontaktirajte nas</h2>
+    
+    <div id="uspjehPoruka" class="skriveno"></div>
+
+    <!--Gemini je pomogao
+    novalidate onemogucava defaultnu validaciju browsera,
+    jer cemo mi to raditi custom putem JavaScripta -->
+    <form id="kontaktForma" novalidate> 
+        
+        <!--Gemini je pomogao
+        label govori sta da unosi, for="ime" spaja labelu sa css inputom
+        input pravi polje za unos teksta
+        name="ime" sacuva vrijednost inputa kao ime = nesto
+        span je prazan i aktivira kada je netacan unos -->
+        <div class="forma-grupa">
+            <label for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime">
+            <span class="greska-tekst" id="imeGreska"></span>
+        </div>
+
+        <div class="forma-grupa">
+            <label for="prezime">Prezime:</label>
+            <input type="text" id="prezime" name="prezime">
+            <span class="greska-tekst" id="prezimeGreska"></span>
+        </div>
+        
+
+        <div class="forma-grupa">
+            <label for="email">E-mail adresa:</label>
+            <input type="text" id="email" name="email">
+            <span class="greska-tekst" id="emailGreska"></span>
+        </div>
+
+
+        <div class="forma-grupa">
+            <label for="telefon">Broj telefona:</label>
+            <input type="text" id="telefon" name="telefon">
+            <span class="greska-tekst" id="telefonGreska"></span>
+        </div>
+
+        <!--Gemini je pomogao
+        Ovo je "drop-down menu" gdje se listaju opcije sa <option>
+        Value predstavlja vrijednost koja se šalje na server -->
+        <div class="forma-grupa">
+            <label for="tema">Tema upita:</label>
+            <select id="tema" name="tema">
+                <option value="">-- Odaberite temu --</option>
+                <option value="ulaznice">Ulaznice i članstvo</option>
+                <option value="sponzorstvo">Sponzorstvo</option>
+                <option value="novinari">Press i novinari</option>
+                <option value="ostalo">Ostalo</option>
+            </select>
+            <span class="greska-tekst" id="temaGreska"></span>
+        </div>
+        
+        <!--Gemini je pomogao
+        textarea je polje za unos više redava teksta -->
+        <div class="forma-grupa">
+            <label for="poruka">Vaša poruka:</label>
+            <textarea id="poruka" name="poruka" rows="5"></textarea>
+            <span class="greska-tekst" id="porukaGreska"></span>
+        </div>
+
+        <!--Gemini je pomogao
+        Ovdje se nalaze 2 dugmeta sa potvrdu ili resetovanje forme -->
+        <div class="forma-akcije">
+            <button type="submit" id="submitDugme">Pošalji poruku</button>
+            <button type="button" id="resetDugme">Resetuj formu</button>
+        </div>
+
+    </form>
+</div>
+
+<footer class="glavni-footer"> <!-- css footera -->
+    <p> Adnan Šehanović, Adis Trnačević, Adna Kunosić - 2026 </p>
+    <div class="drustvene-mreze">
+        <a href="https://facebook.com/fksloboda">Facebook</a> | 
+        <a href="https://instagram.com/fksloboda">Instagram</a>
+    </div>
+</footer>
+
+<script src="js/tptpskripte.js"></script>
+
+</body>
+</html>
