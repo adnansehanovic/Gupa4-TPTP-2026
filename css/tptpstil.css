@@ -179,3 +179,138 @@ boja stavlja kao crna i providnost 90% */
     font-weight: 700;
     font-size: 16px;
 }
+
+/* -------------------------------------------------------- */
+
+
+
+/*                      Kontakt html                        */
+
+
+
+/* -------------------------------------------------------- */
+/* Gemini je pomogao
+margin, odvojeno 120 pixela od kontejnera sa gornje strane,
+40px dole i auto sa lijeve i desne strane
+box shadow stvara sjenku. 0 znaci da ne ide lijevo ni desno, 4 pixela dole,
+i 15px nivo mutnjenja */
+.kontakt-kontejner {
+    max-width: 600px;
+    margin: 120px auto 40px auto; 
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.kontakt-kontejner h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: black;
+}
+
+/* Gemini je pomogao
+stavili smo kontejner da bude flex, kako bi redali elemente
+u njemu jedno ispod drugog sa column naredbom */
+.forma-grupa {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Gemini je pomogao
+0.9em znaci da je tekst 90% velicine osnovnog fonta */
+.forma-grupa label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #444;
+}
+
+/* Gemini je pomogao
+sve css atribute se primjenjuju na elemente unutar forma-grupa */
+.forma-grupa input, 
+.forma-grupa select, 
+.forma-grupa textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Gemini je pomogao
+boja okvira se promijeni kada bude fokus na imenovane dijelove */
+.forma-grupa input:focus, 
+.forma-grupa select:focus, 
+.forma-grupa textarea:focus {
+    border-color: black;
+}
+
+/* Gemini je pomogao
+kontejer je flex i po default reda elemente u redu
+gap pravi razmak izmedu elemenata od 15 pixela */
+.forma-akcije {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Gemini je pomogao
+cursor: pointer pretvara kursor u strelicu kada prede preko dugmeta
+flex: 1 popunjava prostor ravnomjerno izmedu elemenata */
+.forma-akcije button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    flex: 1;
+}
+
+
+#submitDugme {
+    background-color: #d32f2f;
+    color: white;
+}
+
+#submitDugme:hover { background-color: #b71c1c; }
+
+#resetDugme {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#resetDugme:hover { background-color: #bdbdbd; }
+
+/* Gemini je pomogao
+!important daje prioritet ovim atributima kada je "aktivirano" */
+.input-greska {
+    border: 2px solid #e53935 !important;
+    background-color: #ffebee;
+}
+
+/* Gemini je pomogao
+min height rezervise vec visinu ispod polja
+da stranice ne "skače" kada se prikazuju greške */
+.greska-tekst {
+    color: #e53935;
+    font-size: 0.8em;
+    margin-top: 5px;
+    min-height: 16px;
+}
+
+.skriveno {
+    display: none;
+}
+
+.poruka-zelena {
+    display: block;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid #c8e6c9;
+    margin-bottom: 20px;
+    text-align: center;
+}
