@@ -11,7 +11,10 @@
 <body>
 <nav class="meni"> <!-- css menija -->
     <div class="logo"> <!-- css logo -->
-        <img src="SlobodaLogo.png" alt="Logo FK Sloboda">
+        <picture>
+            <source srcset="SlobodaLogo.webp" type="image/webp">
+            <img src="SlobodaLogo.png" alt="Logo FK Sloboda">
+        </picture>
     </div>
     <div class="linkovi"> <!-- css linkova -->
         <a href="index.html">Početna</a> <!-- dodavanje linkova, href salje na lokaciju -->
@@ -20,25 +23,45 @@
         <a href="https://github.com/adnansehanovic/Gupa4-TPTP-2026" target="_blank">GitHub</a>
     </div>
 </nav>
+    
 <section class="slika-pola"> <!-- css pozadine -->
     <img src="tusanj7.jpg" alt="Stadion Tušanj pola ekrana"> <!-- postavljena pozadina -->
 </section>
 
-<div class="historija-kontejner"> <!-- css kontejnera -->
-        <h2>Historija FK Sloboda Tuzla</h2>
+<div class="historija-kontejner"> 
+    <h2>Historija FK Sloboda Tuzla</h2>
+     <!-- Gemini je pomogao. Prave se linkovi koji vode do odgovarajućih sekcija sa tagom # -->   
+    <nav class="bookmark-meni">
+        <p><strong>Brza navigacija:</strong></p>
+        <ul>
+            <li><a href="#istorija">Historija i simbolika</a></li>
+            <li><a href="#legende">Legende kluba</a></li>
+            <li><a href="#uspjesi">Najveći uspjesi</a></li>
+            <li><a href="#sponzori">Naši sponzori</a></li>
+        </ul>
+    </nav>
+    <!-- Sa id gornji bookmark link zna poslat korisnika ovdje
+     na kraju se nalazi link sa samo # koji vodi na vrh stranice -->
+    <section id="istorija">
         <p>Fudbalski klub Sloboda Tuzla jedan je od najstarijih i najuglednijih sportskih kolektiva u Bosni i Hercegovini. Osnovan je davne <strong>1919. godine</strong> pod imenom <em>Gorki</em>, u čast velikog ruskog pisca Maksima Gorkog. Zbog svog izraženog radničkog i antifašističkog opredjeljenja, klub je brzo postao trn u oku tadašnjim vlastima, zbog čega mu je rad 1924. godine zabranjen.</p>
+        
         <h3>Simbol prkosa i slobode</h3>
         <p>Nakon zabrane, ljubav prema fudbalu u Tuzli nije ugašena. Ubrzo se klub ponovo rađa, ovaj put pod imenom <strong>Sloboda</strong>, imenom koje s ponosom nosi i danas. Kroz svoju dugu historiju, Sloboda je postala istinski simbol grada na zrnu soli, a njene <strong>crveno-crne</strong> boje predstavljaju radnički ponos, rudarsku tradiciju i prkos ovog kraja.</p>
+        
         <h3>Zlatne godine i stadion Tušanj</h3>
         <p>Najveće uspjehe klub je počeo nizati krajem 60-ih i tokom 70-ih godina prošlog vijeka. Izgradnjom legendarnog <strong>Stadiona Tušanj</strong> (čija je izgradnja počela 1957. godine), Sloboda je dobila svoj dom. Klub je godinama bio izuzetno stabilan i poštovan prvoligaš u jakoj Prvoj ligi bivše Jugoslavije, a 1971. godine generacija predvođena velikanima igrala je i finale Kupa maršala Tita.</p>
-        <h3 class="istaknuti-podnaslov">Istaknute legende kluba i statistika</h3> <!-- css podnaslova -->
-        <table class="tabela-sloboda"> <!-- css tabele -->
+        <a href="#" class="skoci-na-vrh">↑ Skoči na vrh</a>
+    </section>
+
+    <section id="legende">
+        <h3 class="istaknuti-podnaslov">Istaknute legende kluba i statistika</h3> 
+        <table class="tabela-sloboda"> 
             <thead>
                 <tr>
-                    <th>Ime i Prezime</th>
-                    <th>Pozicija</th>
-                    <th>Period igranja</th>
-                    <th>Broj nastupa (cca)</th>
+                    <th>IME I PREZIME</th>
+                    <th>POZICIJA</th>
+                    <th>PERIOD IGRANJA</th>
+                    <th>BROJ NASTUPA (CCA)</th>
                 </tr>
             </thead>
             <tbody>
@@ -74,9 +97,12 @@
                 </tr>
             </tbody>
         </table>
+        <a href="#" class="skoci-na-vrh">↑ Skoči na vrh</a>
+    </section>
 
+    <section id="uspjesi">
         <h3 class="istaknuti-podnaslov">Najveći uspjesi i takmičenja</h3>
-        <ul class="ugnijezdena-lista"> <!-- css ugnježdene liste -->
+        <ul class="ugnijezdena-lista"> 
             <li>Domaća takmičenja:
                 <ul>
                     <li>Premijer liga Bosne i Hercegovine (Viceprvaci)</li>
@@ -97,7 +123,41 @@
                 </ul>
             </li>
         </ul>
+        <a href="#" class="skoci-na-vrh">↑ Skoči na vrh</a>
+    </section>
+</div>
+    
+<!-- Gemini je pomogao. Određeni kordinati sa slike postanu klikabilni
+ mogu biti vise oblika, i moze se staviti tekst kada se hovera preko -->
+<img src="images/tusanj7.jpg" alt="Ekipa FK Sloboda na Tušnju" usemap="#image-map">
+<map name="image-map">
+    <area shape="circle" coords="1391,234,63" href="https://en.wikipedia.org/wiki/Main_Page" alt="Ime prvog igrača" title="Ime prvog igrača" target="_blank">
+    <area shape="rect" coords="784,258,916,392" href="https://en.wikipedia.org/wiki/Brown_dwarf" alt="Ime drugog igrača" title="Ime drugog igrača" target="_blank">
+</map>
+
+<section id="sponzori" class="sponzori-kontejner">
+    <h3 class="istaknuti-podnaslov">Sponzori i Partneri FK Sloboda</h3>
+    
+    <div class="sponzori-grid">
+        <a href="https://babilon.ba/" target="_blank" class="sponzor-karta">
+            <img src="images/Babilon.png" alt="Babilon Tuzla">
+        </a>
+        <a href="https://grad.tuzla.ba/" target="_blank" class="sponzor-karta">
+            <img src="images/Grad-tuzla.jpg" alt="Grad Tuzla">
+        </a>
+        <a href="https://pivaratuzla.ba/" target="_blank" class="sponzor-karta">
+            <img src="images/Pivo.png" alt="Tuzlanska Pivara">
+        </a>
+        <a href="https://wwin.com/" target="_blank" class="sponzor-karta">
+            <img src="images/WWin.png" alt="WWin">
+        </a>
     </div>
+    <div>
+        <a href="#" class="skoci-na-vrh">↑ Skoči na vrh</a>
+    </div>
+</section>
+<!-- Gemini je pomogao. dugme koje vraca na vrh stranice, &#8679; je "kod" za strelicu prema gore -->
+<button id="nazadNaVrh" title="Povratak na vrh">&#8679;</button>
     
     
 <footer class="glavni-footer"> <!-- css footera -->
