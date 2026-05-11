@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html> 
   <head>
+    <meta charset="UTF-8">
 <title> FK Sloboda Tuzla </title>   <!-- title dodaje tekst u tabu -->
 <link rel="icon" type="image/png" href="SlobodaLogo.png"> <!-- link sluzi sa povezivanje sa vanjskim fajlom, rel icon nam govori da je to ikonica u tabu, type govori kakav je to tip ikonice u nasem slucaju slika png -->
   </head>
@@ -9,32 +10,205 @@
 <link rel="stylesheet" href="tptpstil.css"> <!-- povezivanje sa css -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> <!-- povezivanje custom fonta -->
 
-
-<!-- header (meni) -->
 <nav class="meni">                            <!-- klasifikovanje menija -->
     <div class="logo">                        <!-- klasifikovanje logo -->
         <img src="SlobodaLogo.png" alt="Logo FK Sloboda">
     </div>
 
     <div class="linkovi">                 <!-- klasifikovanje linkova -->
-        <a href="#">Početna</a>           <!-- dodavanje linkova, href salje na lokaciju -->
-        <a href="#">O Nama</a>
-        <a href="#">Kontakt</a>
-        <a href="#">GitHub</a>
+        <a href="index.html">Početna</a>           <!-- dodavanje linkova, href salje na lokaciju -->
+        <a href="sadrzaj.html">O Nama</a>
+        <a href="tim.html">Tim</a>
+        <a href="tabela.html">Tabela</a>
+        <a href="kontakt.html">Kontakt</a>
     </div>
+
+    <div class="github-desno">    <!-- odvajanje githuba desno -->
+        <a href="https://github.com/adnansehanovic/Gupa4-TPTP-2026 " target="_blank">GitHub</a>
+    </div>
+
+
 </nav>
 
 
+<section class="slika">
+    <img src="tusanj6.jpg"  alt="Tusanj stadion">
+
+      <div class="tekst-slika">
+    <span class="mali-naslov">Zvanična WEB stranica</span>
+    <h1>FK SLOBODA <span class="crveno">TUZLA</span></h1>
+    <div class="ukrasna-linija"></div>
+      </div>  
+</section>
+
+
+
+<section class="naredna-utakmica">
+
+      <div class="crveni-box">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+        NAREDNA UTAKMICA
+      </div>
+
+      <div class="timovi-tekst">
+        <h2>FK SLOBODA TUZLA</h2>
+          <div class="rezultat">- : -</div>
+        <h2>FK JEDINSTVO BIHAĆ</h2>
+      </div>
+
+<div class="detalji-utakmice">
+   <br> 24. MAJ 2026, STADION TUŠANJ - TUZLA<br>
+    17:30
+</div>
+
+<div class="detalji-utakmice1">
+   <br> VRIJEME DO UTAKMICE
+
+</div>
+
+<div class="tajmer-kontejner">
+    <div class="vrijeme-box">
+        <span id="dani" class="broj">00</span>
+        <span class="labela">Dana</span>
+    </div>
+    <div class="vrijeme-box">
+        <span id="sati" class="broj">00</span>
+        <span class="labela">Sati</span>
+    </div>
+    <div class="vrijeme-box">
+        <span id="minute" class="broj">00</span>
+        <span class="labela">Minuta</span>
+    </div>
+    <div class="vrijeme-box">
+        <span id="sekunde" class="broj">00</span>
+        <span class="labela">Sekundi</span>
+    </div>
+</div>
+
+
+</section>
+
+
+
+<!-- kontejneri -->
+<div class="sadrzaj-kontejner">
+
+
+        <nav class="lijevi-meni">
+            <h3>Filter Sadržaja</h3>
+            <button class="filter-btn active" data-filter="all">Sve</button>
+            <button class="filter-btn" data-filter="Rezultat">Rezultat</button>
+            <button class="filter-btn" data-filter="Trening">Trening</button>
+            <button class="filter-btn" data-filter="Trener">Šef stručnog štaba</button>
+            <button class="filter-btn" data-filter="Kapiten">Kapiten ekipe</button>
+            <button class="filter-btn" data-filter="finale-kupa">Finale kupa</button>
+            <button class="filter-btn" data-filter="Skola-fudbala">Škola fudbala</button>
+        </nav>
+
+
+        <main class="glavni-sadrzaj" id="kartice-grid">
+           
+            <div class="card" data-category="Rezultat">
+                <img src="poraz1.PNG" alt="Rezultat">
+                <div class="card-sadrzaj">
+                    <h4>Poraz u Konjicu</h4>
+                    <p>Sloboda je kući otišla bez bodova u teškoj utakmici protiv Igman Konjica.</p>
+                    <a href="#">Pročitaj više</a>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="Trening">
+                <img src="nikolatrening.PNG" alt="Trening">
+                <div class="card-sadrzaj">
+                    <h4>Galerija </h4>
+                    <p>Zadnji trening pred utakmicu na Tušnju protiv Jedinstva iz Bihaća.</p>
+                    <a href="#">Pogledaj galeriju</a>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="Trener">
+                <img src="adnanh1.jpg" alt="Trener">
+                <div class="card-sadrzaj">
+                    <h4>Šef stručnog štaba</h4>
+                    <p>Adnan Hodžić - Zadovoljan sam kako je ekipa odradila današnji trening.</p>
+                    <a href="#">Pročitaj više</a>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="Kapiten">
+                <img src="bega.jpeg" alt="Kapiten">
+                <div class="card-sadrzaj">
+                    <h4>Kapiten ekipe</h4>
+                    <p>Ajdin Beganović - Spremni smo za našu posljednju utakmicu u sezoni.</p>
+                    <a href="#">Pročitaj više</a>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="finale-kupa">
+                <img src="finalekupa.PNG" alt="finale-kupa">
+                <div class="card-sadrzaj">
+                    <h4>Juniori u OMLADINSKOM FINALU KUPA</h4>
+                    <p>Naši juniori u utorak 5. Maj igraju FINALE OMLADINSKOG KUPA u Zenici</p>
+                    <a href="#">Pogledaj više</a>
+                </div>
+            </div>
+
+
+            <div class="card" data-category="Skola-fudbala">
+                <img src="skolafudbala.PNG" alt="Skola-fudbala">
+                <div class="card-sadrzaj">
+                    <h4>Upis u školu fudbala</h4>
+                    <p>Od početka augusta počinje upis novih članova u školu fudbala.</p>
+                    <a href="#">Učlani se</a>
+                </div>
+            </div>
+
+
+        </main>
+
+
+        <aside class="desni-aside">
+            <h3>Naš dom</h3>
+            <p>Stadion Tušanj, mjesto gdje se ispisuje historija crveno-crnih.</p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.404870503112!2d18.66579997677134!3d44.54228969830501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ea7a4198144bb%3A0xa97c9b36d65c3bb!2zU3RhZGlvbiBUdcWhYW5q!5e0!3m2!1sbs!2sba!4v1700000000000!5m2!1sbs!2sba"
+                width="100%"
+                height="250"
+                style="border:0;"
+                allowfullscreen=""
+                border-color="black"
+                loading="lazy">
+            </iframe>
+        </aside>
+
+
+    </div>
 
 
 
 <!-- footer -->
-  <footer class="glavni-footer">
+<footer class="glavni-footer">
         <p>Adnan Šehanović, Adis Trnačević, Adna Kunosić - 2026</p>
         <div class="drustvene-mreze">
-            <a href="https://www.facebook.com/FKSlobodaTuzla" target="_blank">Facebook</a> | 
+            <a href="https://www.facebook.com/FKSlobodaTuzla" target="_blank">Facebook</a>  
             <a href="https://www.instagram.com/fksloboda.tuzla/" target="_blank">Instagram</a>
         </div>
     </footer>
+
+
+    <button id="mod-dugme" class="plivajuce-dugme">🌙</button>
+
+
+
+
+
+
+
+    <script src="skripta.js"></script>
+
 </body>
 </html>
