@@ -551,6 +551,18 @@ body.tamni-mod .plivajuce-dugme {
 
 
 /* -------------------------------------------------------- */
+:root {
+    --sloboda-crvena: #d32f2f;
+    --sloboda-tamna: #b71c1c;
+    --tekst-glavni: #333333;
+    --siva-pozadina: #f5f5f5;
+    --glavni-font: 'Montserrat', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
 
 /* Gemini je pomogao
 Pozadinska slika zauzima citavu sirinu ekrana
@@ -755,6 +767,144 @@ display: inline-block pravi da moze margin utjecati na link */
     padding: 15px; 
     font-size: 18px; 
     box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+}
+
+.galerija-kontejner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responzivnost: Samo prebacuje u novi red na mobitelu */
+    gap: 25px; /* Razmak između kartica */
+    padding: 0 20px;
+}
+
+/* Izgled jedne kartice igrača/trenera */
+.tim-karta {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden; /* Odsijeca ćoškove slike da prate zaobljenost kartice */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Hover efekat: Kartica se blago podiže kada pređeš mišem */
+.tim-karta:hover {
+    transform: translateY(-5px); /* Pomjera karticu 5px prema gore */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Pojačava sjenku */
+}
+
+/* Slika unutar kartice */
+.tim-karta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Reže sliku savršeno da popuni prostor bez deformacije */
+    border-bottom: 3px solid #E32221; /* Slobodina crvena boja za detalj ispod slike */
+}
+
+/* Tekst ispod slike */
+.tim-info {
+    padding: 15px;
+}
+
+.tim-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.tim-info p {
+    margin: 0;
+    color: #777;
+    font-style: italic;
+}
+
+/* Poseban stil samo za trenera (ako ga želiš malo izdvojiti vizuelno) */
+.trener-karta {
+    border: 2px solid #333; /* Tamniji okvir za šefa struke */
+}
+
+.naslov-struka {
+    margin-top: 50px; 
+}
+
+/* Centriranje i ograničavanje širine kada imamo samo jednu karticu (Trenera) */
+.galerija-kontejner.centrirano {
+    display: flex;
+    justify-content: center;
+}
+
+.galerija-kontejner.centrirano .tim-karta {
+    width: 100%;
+    max-width: 300px; /* Trenerova kartica neće ići šire od 300px */
+}
+
+.sekcija-tim {
+    max-width: 940px; /* Možeš staviti i 900px ako želiš da bude u milimetar kao historija */
+    margin: 50px auto; /* 'auto' magično centrira cijelu sekciju na sredinu ekrana */
+    padding: 20px;
+}
+
+body.tamni-mod .sekcija-tim h2 {
+    color: #f4f4f4;
+}
+
+body.tamni-mod .istaknuti-podnaslov {
+    color: #f4f4f4;
+}
+
+body.tamni-mod .historija-kontejner {
+    color: #f4f4f4;
+}
+
+body.tamni-mod .historija-kontejner h2 {
+    border-bottom: 3px solid #c40000; /* Crvena linija umjesto crne */
+}
+
+body.tamni-mod .historija-kontejner h3 {
+    color: #f4f4f4;
+}
+
+/* Tabela */
+body.tamni-mod .tabela-sloboda {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.tamni-mod .tabela-sloboda td {
+    border-bottom: 1px solid #333;
+}
+
+/* Sponzori i Tim kartice */
+body.tamni-mod .sponzor-karta, 
+body.tamni-mod .tim-karta {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+}
+
+body.tamni-mod .tim-info h3 {
+    color: #f4f4f4;
+}
+
+body.tamni-mod .tim-info p {
+    color: #bbb;
+}
+
+/* Bookmark meni (O Nama) */
+body.tamni-mod .bookmark-meni {
+    background-color: #1a1a1a;
+    border-left: 5px solid #c40000;
+}
+
+.map-kontejner {
+    width: 100%;
+    overflow-x: auto; /* Omogućava skrolanje lijevo desno ako je slika prevelika */
+    text-align: center;
+}
+
+.map-kontejner img {
+    max-width: none;
+    height: auto;
 }
 
 /* -------------------------------------------------------- */
