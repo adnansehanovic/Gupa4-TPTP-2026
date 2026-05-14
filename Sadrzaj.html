@@ -2,9 +2,10 @@
 <html lang="bs">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FK Sloboda Tuzla</title> <!-- title dodaje tekst u tabu -->
-    <link rel="icon" type="image/png" href="SlobodaLogo.png"> <!-- link sluzi sa povezivanje sa vanjskim fajlom, rel icon nam govori da je to ikonica u tabu, type govori kakav je to tip ikonice u nasem slucaju slika png -->
-    <link rel="stylesheet" href="tptpstil.css"> <!-- povezivanje sa css -->
+    <link rel="icon" type="image/png" href="images/SlobodaLogo.png"> <!-- link sluzi sa povezivanje sa vanjskim fajlom, rel icon nam govori da je to ikonica u tabu, type govori kakav je to tip ikonice u nasem slucaju slika png -->
+    <link rel="stylesheet" href="css/tptpstil.css"> <!-- povezivanje sa css -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> <!-- povezivanje custom fonta -->
 </head>
 
@@ -18,16 +19,75 @@
     </div>
     <div class="linkovi"> <!-- css linkova -->
         <a href="index.html">Početna</a> <!-- dodavanje linkova, href salje na lokaciju -->
-        <a href="Sadrzaj.html">O Nama</a>
-        <a href="Kontakt.html">Kontakt</a>
+        <a href="sadrzaj.html">O Nama</a>
+        <a href="kontakt.html">Kontakt</a>
         <a href="https://github.com/adnansehanovic/Gupa4-TPTP-2026" target="_blank">GitHub</a>
     </div>
 </nav>
     
 <section class="slika-pola"> <!-- css pozadine -->
-    <img src="tusanj7.jpg" alt="Stadion Tušanj pola ekrana"> <!-- postavljena pozadina -->
+    <img src="images/tusanj7.jpg" alt="Stadion Tušanj pola ekrana"> <!-- postavljena pozadina -->
 </section>
 
+<section id="tim-galerija" class="sekcija-tim">
+    
+    <h2>Igrači:</h2>
+    <div class="galerija-kontejner">
+        
+        <div class="tim-karta">
+            <img src="images/azir.png" alt="Azir Muminović">
+            <div class="tim-info">
+                <h3>Azir Muminović</h3>
+                <p>Golman</p>
+            </div>
+        </div>
+
+        <div class="tim-karta">
+            <img src="images/hamza.png" alt="Hamza Redžić">
+            <div class="tim-info">
+                <h3>Hamza Redžić</h3>
+                <p>Štoper</p>
+            </div>
+        </div>
+
+        <div class="tim-karta">
+            <img src="images/harun.png" alt="Harun Hadžibeganović">
+            <div class="tim-info">
+                <h3>Harun Hadžibeganović</h3>
+                <p>Desni back</p>
+            </div>
+        </div>
+
+        <div class="tim-karta">
+            <img src="images/bega.png" alt="Ajdin Beganović">
+            <div class="tim-info">
+                <h3>Ajdin Beganović</h3>
+                <p>Vezni red</p>
+            </div>
+        </div>
+
+        <div class="tim-karta">
+            <img src="images/nikola.png" alt="Nikola Komazec">
+            <div class="tim-info">
+                <h3>Nikola Komazec</h3>
+                <p>Napadač</p>
+            </div>
+        </div>
+
+    </div> <h2 class="naslov-struka">Stručni štab:</h2>
+    <div class="galerija-kontejner centrirano"> 
+        
+        <div class="tim-karta trener-karta">
+            <img src="images/trener.png" alt="Glavni Trener">
+            <div class="tim-info">
+                <h3>Adnan Hodžić</h3>
+                <p>Šef stručnog štaba</p>
+            </div>
+        </div>
+    </div> 
+</section>
+
+    
 <div class="historija-kontejner"> 
     <h2>Historija FK Sloboda Tuzla</h2>
      <!-- Gemini je pomogao. Prave se linkovi koji vode do odgovarajućih sekcija sa tagom # -->   
@@ -129,10 +189,14 @@
     
 <!-- Gemini je pomogao. Određeni kordinati sa slike postanu klikabilni
  mogu biti vise oblika, i moze se staviti tekst kada se hovera preko -->
-<img src="images/tusanj7.jpg" alt="Ekipa FK Sloboda na Tušnju" usemap="#image-map">
+<div class="map-kontejner">
+    <img src="images/tusanj7.jpg" alt="Ekipa FK Sloboda na Tušnju" usemap="#image-map">
+</div>
+
 <map name="image-map">
-    <area shape="circle" coords="1391,234,63" href="https://en.wikipedia.org/wiki/Main_Page" alt="Ime prvog igrača" title="Ime prvog igrača" target="_blank">
-    <area shape="rect" coords="784,258,916,392" href="https://en.wikipedia.org/wiki/Brown_dwarf" alt="Ime drugog igrača" title="Ime drugog igrača" target="_blank">
+    <area target="_blank" alt="Vedad Abidović" title="Vedad Abidović" href="https://www.instagram.com/v.abidovic/" coords="1356,227,44" shape="circle">
+    <area shape="rect" coords="784,258,916,392" href="https://www.instagram.com/harunhadzibeganovic/" alt="Harun Hadžibeganović" title="Harun Hadžibeganović" target="_blank">
+    <area target="_blank" alt="Ajdin Beganović" title="Ajdin Beganović" href="https://www.instagram.com/ajdinbbbb/" coords="425,216,50" shape="circle">
 </map>
 
 <section id="sponzori" class="sponzori-kontejner">
@@ -158,7 +222,7 @@
 </section>
 <!-- Gemini je pomogao. dugme koje vraca na vrh stranice, &#8679; je "kod" za strelicu prema gore -->
 <button id="nazadNaVrh" title="Povratak na vrh">&#8679;</button>
-    
+<button id="mod-dugme" class="plivajuce-dugme">🌙</button>
     
 <footer class="glavni-footer"> <!-- css footera -->
     <p> Adnan Šehanović, Adis Trnačević, Adna Kunosić - 2026 </p>
@@ -168,5 +232,7 @@
     </div>
 </footer>
 
+<script src="js/tptpskripte.js"></script>
+    
 </body>
 </html>
