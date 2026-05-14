@@ -7,76 +7,110 @@
 
 
 /* -------------------------------------------------------- */
-    //Ovdje upiati datum i vrijeme utakmice (mjesec dan godina sati:ninute:sekunde)
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    //Ovdje upisati datum i vrijeme utakmice (mjesec dan godina sati:ninute:sekunde)
     const datumUtakmice = new Date("May 24, 2026 17:30:00").getTime(); // tajmer odbrojava do tog vremena
-
-    //funkcija koja se pokrece svake sekunde
-    const tajmer = setInterval(function() {
-
-        //uzima trenutno vrijeme
-        const sada = new Date().getTime();
-
-        //racuna razliku od trenutnog vremena do vremena utakmice
-        const udaljenost = datumUtakmice - sada;
-
+    const tajmer = setInterval(function() { //funkcija koja se pokrece svake sekunde
+        const sada = new Date().getTime(); //uzima trenutno vrijeme
+        const udaljenost = datumUtakmice - sada; //racuna razliku od trenutnog vremena do vremena utakmice
         //matematicke kalkulacije za dan sat minuta sekunda
         const dani = Math.floor(udaljenost / (1000 * 60 * 60 * 24));
         const sati = Math.floor((udaljenost % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minute = Math.floor((udaljenost % (1000 * 60 * 60)) / (1000 * 60));
         const sekunde = Math.floor((udaljenost % (1000 * 60)) / 1000);
 
+        // Provjera postojanja elemenata prije upisivanja
         //ispisivanje rezultata
-        //dodajemo 0 ako je npr 9 dana pisati je 09
-        document.getElementById("dani").innerHTML = dani < 10 ? "0" + dani : dani;
-        document.getElementById("sati").innerHTML = sati < 10 ? "0" + sati : sati;
-        document.getElementById("minute").innerHTML = minute < 10 ? "0" + minute : minute;
-        document.getElementById("sekunde").innerHTML = sekunde < 10 ? "0" + sekunde : sekunde;
+        //dodajemo 0 ako je npr 9 dana pisati 09
+        if(document.getElementById("dani")){
+            document.getElementById("dani").innerHTML = dani < 10 ? "0" + dani : dani;
+            document.getElementById("sati").innerHTML = sati < 10 ? "0" + sati : sati;
+            document.getElementById("minute").innerHTML = minute < 10 ? "0" + minute : minute;
+            document.getElementById("sekunde").innerHTML = sekunde < 10 ? "0" + sekunde : sekunde;
+        }
 
-        //zaustavljanje brojaca nakon sto istekne vrijeme
-        if (udaljenost < 0) {
+        if (udaljenost < 0) { //zaustavljanje brojaca nakon sto istekne vrijeme
             clearInterval(tajmer); // Zaustavlja brojač
-            document.getElementById("dani").innerHTML = "00";
-            document.getElementById("sati").innerHTML = "00";
-            document.getElementById("minute").innerHTML = "00";
-            document.getElementById("sekunde").innerHTML = "00";
+            ["dani", "sati", "minute", "sekunde"].forEach(id => {
+                if(document.getElementById(id)) document.getElementById(id).innerHTML = "00";
+            });
         }
     }, 1000); // 1000 milisekundi = 1 sekunda
 
+    // DARK MODE DUGME 
+    const modDugme = document.getElementById('mod-dugme');
+    const body = document.body;
+    //da li je korisnik prsli put ostavio tamni mod upaljen
+    if (modDugme) {
+        if (localStorage.getItem('tema') === 'tamna') {
+            body.classList.add('tamni-mod');
+            modDugme.textContent = '☀️'; // Postavljamo sunce jer je tamni mod aktivan
+        }
+        //dodavanje ili skidanje klsae tamni mod
+        modDugme.addEventListener('click', () => {
+            body.classList.toggle('tamni-mod');
+            //provjeravanje da li je tamni mod upaljne
+            if (body.classList.contains('tamni-mod')) {
+                localStorage.setItem('tema', 'tamna');
+                modDugme.textContent = '☀️'; //prebacit na sunce
+            } else {
+                localStorage.setItem('tema', 'svijetla');
+                modDugme.textContent = '🌙'; //ako nije vrati na mjesec
+            }
+        });
+    }
 
-// DARK MODE DUGME 
+    // FILTRIRANJE KARTICA
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
 
-const modDugme = document.getElementById('mod-dugme');
-const body = document.body;
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
 
-//da li je korisnik prsli put ostavio tamni mod upaljen
-if (localStorage.getItem('tema') === 'tamna') {
-    body.classList.add('tamni-mod');
-    modDugme.textContent = '☀️'; // Postavljamo sunce jer je tamni mod aktivan
-}
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filter === 'all' || filter === category) {
+                    card.style.display = 'block';
+                    card.style.opacity = '1';
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        });
+    });
 
-//dodavanje ili skidanje klsae tamni mod
-modDugme.addEventListener('click', () => {
-    body.classList.toggle('tamni-mod');
-    
-    //provjeravanje da li je tamni mod upaljne
-    if (body.classList.contains('tamni-mod')) {
-        localStorage.setItem('tema', 'tamna');
-        modDugme.textContent = '☀️'; //prebacit na sunce
-    } else {
-        localStorage.setItem('tema', 'svijetla');
-        modDugme.textContent = '🌙'; //ako nije vrati na mjesec
+/* -------------------------------------------------------- */
+
+
+
+/*                      Sadrzaj html                        */
+
+
+
+/* -------------------------------------------------------- */
+
+    let vratiDugme = document.getElementById("nazadNaVrh");
+
+    if (vratiDugme) {
+        window.addEventListener('scroll', function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                vratiDugme.style.display = "block";
+            } else {
+                vratiDugme.style.display = "none";
+            }
+        });
+
+        vratiDugme.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     }
 });
-
-
-
-
-
-
-
-
-
-
 
 /* -------------------------------------------------------- */
 
