@@ -566,7 +566,7 @@ body.tamni-mod .plivajuce-dugme {
 
 
 /* -------------------------------------------------------- */
-:root {
+ :root {
     --sloboda-crvena: #d32f2f;
     --sloboda-tamna: #b71c1c;
     --tekst-glavni: #333333;
@@ -629,7 +629,6 @@ i za line height sto mijenja vertikalni razmak izmedu linija*/
     color: #333;
 }
 
-/* Gemini je dao prijedlog za crnu liniju ispod naslova */
 .historija-kontejner h2 {
     color: #c40000;
     font-size: 32px;
@@ -642,29 +641,21 @@ i za line height sto mijenja vertikalni razmak izmedu linija*/
     margin-top: 30px;
 }
 
-/* Gemini je dao prijedlog za crvenu liniju ispod naslova */
 .historija-kontejner .istaknuti-podnaslov {
     margin-top: 40px;
     border-bottom: 2px solid #c40000;
     padding-bottom: 5px;
 }
 
-/* Gemini je pomogao
-Zauzima citav prostor kontejnera 
-border collapse spaja ivice ćelija
-margin top i bottom odvaja tabelu od ivica
-stavlja tacan font, i bijelu pozadinsku boju
-box shadow stavlja sjenku, 0 znaci da ne ide lijevo ni desno
-4px znaci da ide dole 4 pixela, 10px je zamućenje
-boja stavlja kao crna i providnost 90% */
 .tabela-sloboda {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 40px;
     font-family: 'Montserrat', sans-serif;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Blaga sjenka za 3D efekat */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
     background-color: white;
+    overflow-x: scroll;
 }
 
 .tabela-sloboda th, .tabela-sloboda td {
@@ -731,7 +722,6 @@ object-fit: contain osigurava da slika stane unutar kontejnera bez deformisanja 
     border-radius: 4px;
 }
 
-/* Gemini je pomogao za listu da nema oznake */
 .bookmark-meni ul {
     list-style-type: none;
     padding-left: 0;
@@ -740,7 +730,6 @@ object-fit: contain osigurava da slika stane unutar kontejnera bez deformisanja 
     flex-wrap: wrap;
 }
 
-/* Gemini je pomogao za text decoration da nema underline */
 .bookmark-meni a {
     color: var(--sloboda-crvena);
     text-decoration: none;
@@ -769,54 +758,50 @@ display: inline-block pravi da moze margin utjecati na link */
 }
 
 #nazadNaVrh {
-    display: none;
-    width: 50px;
+    display: none; /* JS će ovo promijeniti u 'block' */
     position: fixed; 
     bottom: 30px; 
-    right: 30px; 
-    z-index: 99; 
+    right: 100px; 
+    z-index: 9999;
     border: none; 
-    background-color: var(--sloboda-crvena); 
+    background-color: #c40000;
     color: white; 
     cursor: pointer; 
     padding: 15px; 
-    font-size: 18px; 
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px; 
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    line-height: 1;
 }
 
 .galerija-kontejner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responzivnost: Samo prebacuje u novi red na mobitelu */
-    gap: 25px; /* Razmak između kartica */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
     padding: 0 20px;
 }
 
-/* Izgled jedne kartice igrača/trenera */
 .tim-karta {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
-    overflow: hidden; /* Odsijeca ćoškove slike da prate zaobljenost kartice */
+    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
+    transition: 0.3s;
 }
 
-/* Hover efekat: Kartica se blago podiže kada pređeš mišem */
 .tim-karta:hover {
-    transform: translateY(-5px); /* Pomjera karticu 5px prema gore */
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Pojačava sjenku */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
-/* Slika unutar kartice */
 .tim-karta img {
-    width: 100%;
     height: 250px;
-    object-fit: cover; /* Reže sliku savršeno da popuni prostor bez deformacije */
-    border-bottom: 3px solid #E32221; /* Slobodina crvena boja za detalj ispod slike */
+    border-bottom: 3px solid #E32221;
 }
 
-/* Tekst ispod slike */
 .tim-info {
     padding: 15px;
 }
@@ -833,16 +818,15 @@ display: inline-block pravi da moze margin utjecati na link */
     font-style: italic;
 }
 
-/* Poseban stil samo za trenera (ako ga želiš malo izdvojiti vizuelno) */
 .trener-karta {
-    border: 2px solid #333; /* Tamniji okvir za šefa struke */
+    border: 2px solid #333;
+    text-align: center;
 }
 
 .naslov-struka {
     margin-top: 50px; 
 }
 
-/* Centriranje i ograničavanje širine kada imamo samo jednu karticu (Trenera) */
 .galerija-kontejner.centrirano {
     display: flex;
     justify-content: center;
@@ -850,12 +834,12 @@ display: inline-block pravi da moze margin utjecati na link */
 
 .galerija-kontejner.centrirano .tim-karta {
     width: 100%;
-    max-width: 300px; /* Trenerova kartica neće ići šire od 300px */
+    max-width: 300px;
 }
 
 .sekcija-tim {
-    max-width: 940px; /* Možeš staviti i 900px ako želiš da bude u milimetar kao historija */
-    margin: 50px auto; /* 'auto' magično centrira cijelu sekciju na sredinu ekrana */
+    max-width: 940px;
+    margin: 50px auto;
     padding: 20px;
 }
 
@@ -872,14 +856,13 @@ body.tamni-mod .historija-kontejner {
 }
 
 body.tamni-mod .historija-kontejner h2 {
-    border-bottom: 3px solid #c40000; /* Crvena linija umjesto crne */
+    border-bottom: 3px solid #c40000;
 }
 
 body.tamni-mod .historija-kontejner h3 {
     color: #f4f4f4;
 }
 
-/* Tabela */
 body.tamni-mod .tabela-sloboda {
     background-color: #1a1a1a;
     color: #f4f4f4;
@@ -890,7 +873,6 @@ body.tamni-mod .tabela-sloboda td {
     border-bottom: 1px solid #333;
 }
 
-/* Sponzori i Tim kartice */
 body.tamni-mod .sponzor-karta, 
 body.tamni-mod .tim-karta {
     background-color: #1a1a1a;
@@ -905,21 +887,17 @@ body.tamni-mod .tim-info p {
     color: #bbb;
 }
 
-/* Bookmark meni (O Nama) */
 body.tamni-mod .bookmark-meni {
     background-color: #1a1a1a;
     border-left: 5px solid #c40000;
 }
 
 .map-kontejner {
-    width: 100%;
-    overflow-x: auto; /* Omogućava skrolanje lijevo desno ako je slika prevelika */
-    text-align: center;
+    overflow-x: auto;
 }
 
-.map-kontejner img {
-    max-width: none;
-    height: auto;
+.overflow{
+    overflow-x: auto;
 }
 
 /* -------------------------------------------------------- */
