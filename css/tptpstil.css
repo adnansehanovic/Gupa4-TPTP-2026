@@ -542,6 +542,21 @@ body.tamni-mod .plivajuce-dugme {
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
+/* animacija */
+.tekst-slika {
+    animation: fadeInTekst 2s ease-in-out forwards;
+}
+
+@keyframes fadeInTekst {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
 /* -------------------------------------------------------- */
 
 
