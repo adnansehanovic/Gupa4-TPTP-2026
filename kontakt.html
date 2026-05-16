@@ -2,26 +2,42 @@
 <html lang="bs">
 <head>
     <meta charset="UTF-8">
-    <title>FK Sloboda Tuzla</title> <!-- title dodaje tekst u tabu -->
-    <link rel="icon" type="image/png" href="SlobodaLogo.png"> <!-- link sluzi sa povezivanje sa vanjskim fajlom, rel icon nam govori da je to ikonica u tabu, type govori kakav je to tip ikonice u nasem slucaju slika png -->
-    <link rel="stylesheet" href="css/tptpstil.css"> <!-- povezivanje sa css -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> <!-- povezivanje custom fonta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FK Sloboda Tuzla</title> 
+    <link rel="icon" type="image/png" href="images/SlobodaLogo.png">
+    <link rel="stylesheet" href="css/tptpstil.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<nav class="meni"> <!-- css menija -->
-    <div class="logo"> <!-- css logo -->
-        <img src="SlobodaLogo.png" alt="Logo FK Sloboda">
+<nav class="meni">
+    <div class="logo">
+        <img src="Images/SlobodaLogo.png" alt="Logo FK Sloboda">
     </div>
-    <div class="linkovi"> <!-- css linkova -->
-        <a href="index.html">Početna</a> <!-- dodavanje linkova, href salje na lokaciju -->
-        <a href="Sadrzaj.html">O Nama</a>
-        <a href="Kontakt.html">Kontakt</a>
-        <a href="https://github.com/adnansehanovic/Gupa4-TPTP-2026" target="_blank">GitHub</a>
+    <div class="linkovi">
+        <a href="index.html">Početna</a>
+        <a href="sadrzaj.html">O Nama</a>
+        <a href="kontakt.html">Kontakt</a>
+    </div>
+    <div class="github-desno">    <!-- odvajanje githuba desno -->
+        <a href="https://github.com/adnansehanovic/Gupa4-TPTP-2026 " target="_blank">GitHub</a>
     </div>
 </nav>
 
-<div class="kontakt-kontejner">
+<div class="sadrzaj2-kontejner">
+
+    <nav class="lijevi-meni">
+        <h3>Pratite nas</h3>
+        <p>Budite u toku sa informacijama:</p>
+        <div class="kontakt-drustvene">
+            <a href="https://facebook.com/fksloboda" target="_blank" class="filter-btn">Facebook</a>
+            <a href="https://instagram.com/fksloboda" target="_blank" class="filter-btn">Instagram</a>
+            <a href="https://youtube.com" target="_blank" class="filter-btn">YouTube</a>
+        </div>
+    </nav>
+
+    <main class="glavni-sadrzaj">
+    <div class="kontakt-kontejner">
     <h2>Kontaktirajte nas</h2>
     
     <div id="uspjehPoruka" class="skriveno"></div>
@@ -91,10 +107,22 @@
             <button type="submit" id="submitDugme">Pošalji poruku</button>
             <button type="button" id="resetDugme">Resetuj formu</button>
         </div>
-
     </form>
 </div>
+</main>
 
+<aside class="desni-aside">
+        <h3>Naša lokacija</h3>
+        <p>Stadion Tušanj, Tuzla</p>
+        <iframe
+            class="mapa-okvir"
+            src="https://maps.google.com/maps?q=Rudarska%20stadion%20Tu%C5%A1anj%20bb%2075000%20Tuzla%2C%20Bosnia%20and%20Herzegovina&t=m&z=15&output=embed&iwloc=near"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </aside>
+</div>
+    
 <footer class="glavni-footer"> <!-- css footera -->
     <p> Adnan Šehanović, Adis Trnačević, Adna Kunosić - 2026 </p>
     <div class="drustvene-mreze">
@@ -103,6 +131,7 @@
     </div>
 </footer>
 
+<button id="mod-dugme" class="plivajuce-dugme">🌙</button>
 <script src="js/tptpskripte.js"></script>
 
 </body>
