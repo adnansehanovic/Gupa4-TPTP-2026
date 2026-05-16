@@ -909,19 +909,23 @@ body.tamni-mod .bookmark-meni {
 
 
 /* -------------------------------------------------------- */
-/* Gemini je pomogao
-margin, odvojeno 120 pixela od kontejnera sa gornje strane,
-40px dole i auto sa lijeve i desne strane
-box shadow stvara sjenku. 0 znaci da ne ide lijevo ni desno, 4 pixela dole,
-i 15px nivo mutnjenja */
+
+.sadrzaj2-kontejner {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr; 
+    gap: 20px;
+    padding: 140px 5% 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 140px;
+}
+
 .kontakt-kontejner {
-    max-width: 600px;
-    margin: 120px auto 40px auto; 
-    padding: 30px;
     background-color: white;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 }
 
 .kontakt-kontejner h2 {
@@ -930,7 +934,7 @@ i 15px nivo mutnjenja */
     color: black;
 }
 
-/* Gemini je pomogao
+/* Gemini
 stavili smo kontejner da bude flex, kako bi redali elemente
 u njemu jedno ispod drugog sa column naredbom */
 .forma-grupa {
@@ -956,20 +960,16 @@ sve css atribute se primjenjuju na elemente unutar forma-grupa */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--glavni-font);
 }
 
-/* Gemini je pomogao
-boja okvira se promijeni kada bude fokus na imenovane dijelove */
 .forma-grupa input:focus, 
 .forma-grupa select:focus, 
 .forma-grupa textarea:focus {
-    border-color: black;
+    border-color: var(--sloboda-crvena);
+    outline: none;
 }
 
-/* Gemini je pomogao
-kontejer je flex i po default reda elemente u redu
-gap pravi razmak izmedu elemenata od 15 pixela */
 .forma-akcije {
     display: flex;
     gap: 15px;
@@ -977,7 +977,6 @@ gap pravi razmak izmedu elemenata od 15 pixela */
 }
 
 /* Gemini je pomogao
-cursor: pointer pretvara kursor u strelicu kada prede preko dugmeta
 flex: 1 popunjava prostor ravnomjerno izmedu elemenata */
 .forma-akcije button {
     padding: 12px 20px;
@@ -988,13 +987,12 @@ flex: 1 popunjava prostor ravnomjerno izmedu elemenata */
     flex: 1;
 }
 
-
 #submitDugme {
-    background-color: #d32f2f;
+    background-color: var(--sloboda-crvena);
     color: white;
 }
 
-#submitDugme:hover { background-color: #b71c1c; }
+#submitDugme:hover { background-color: var(--sloboda-tamna); }
 
 #resetDugme {
     background-color: #e0e0e0;
@@ -1010,9 +1008,6 @@ flex: 1 popunjava prostor ravnomjerno izmedu elemenata */
     background-color: #ffebee;
 }
 
-/* Gemini je pomogao
-min height rezervise vec visinu ispod polja
-da stranice ne "skače" kada se prikazuju greške */
 .greska-tekst {
     color: #e53935;
     font-size: 0.8em;
@@ -1033,4 +1028,260 @@ da stranice ne "skače" kada se prikazuju greške */
     border: 1px solid #c8e6c9;
     margin-bottom: 20px;
     text-align: center;
+}
+
+.kontakt-drustvene {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.kontakt-drustvene .filter-btn {
+    text-decoration: none;
+    color: black;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    transition: 0.3s;
+    width: 100%;      
+    margin-left: 0;   
+    margin-right: 0;    
+    text-align: center; 
+    padding: 12px 0;    
+    display: block;
+    box-sizing: border-box;
+}
+
+.kontakt-drustvene .filter-btn:hover {
+    background-color: var(--sloboda-crvena);
+    color: white;
+    border-color: var(--sloboda-crvena);
+}
+
+.mapa-okvir {
+    width: 100%;
+    height: 250px;
+    border: 0;     
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+body.tamni-mod .kontakt-kontejner, 
+body.tamni-mod .lijevi-meni,
+body.tamni-mod .desni-aside{
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    color: #f4f4f4;
+}
+
+body.tamni-mod .kontakt-kontejner h2 {
+    color: #f4f4f4;
+}
+
+body.tamni-mod .forma-grupa label {
+    color: #bbb;
+}
+
+body.tamni-mod .forma-grupa input, 
+body.tamni-mod .forma-grupa select, 
+body.tamni-mod .forma-grupa textarea {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #f4f4f4;
+}
+
+body.tamni-mod .forma-grupa input:focus, 
+body.tamni-mod .forma-grupa select:focus, 
+body.tamni-mod .forma-grupa textarea:focus {
+    border-color: #c40000;
+    outline: none;
+}
+
+body.tamni-mod .kontakt-drustvene .filter-btn {
+    background: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+body.tamni-mod #resetDugme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+body.tamni-mod #resetDugme:hover {
+    background-color: #444;
+}
+
+body.tamni-mod .poruka-zelena {
+    background-color: #1b3320;
+    color: #81c784;
+    border: 1px solid #2e7d32;
+}
+
+.sadrzaj-kontejner, .sadrzaj2-kontejner {
+    padding-top: 120px !important;
+    position: relative;
+}
+
+.lijevi-meni {
+    position: relative !important;
+    margin-right: 20px;
+    z-index: 10;
+}
+
+html, body {
+    overflow-x: hidden !important; 
+}
+
+
+/* --------RESPONZIVNOST--------- */
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .sadrzaj-kontejner, .sadrzaj2-kontejner {
+        display: flex; 
+        flex-direction: column;
+        padding-top: 140px;
+    }
+
+    .lijevi-meni, .desni-aside {
+        width: 100%;
+        margin-bottom: 20px;
+        position: static;
+    }
+
+    .kontakt-kontejner {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 599px) {
+    /* Gemini je dao ideju da se sve stavi na !important, 
+    sto daje prednost ovim atributima kada se aktiviraju.
+    Vjerovatno ne treba vecina !important ali je tesko pratit koji je potreban */
+    .meni {
+        display: flex !important;
+        flex-direction: column !important; 
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        padding: 10px 15px !important;
+        height: auto !important;
+        position: fixed !important;
+        top: 0 !important; 
+        left: 0 !important; 
+        box-sizing: border-box !important;
+        z-index: 9999 !important;
+    }
+
+    .linkovi {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 12px !important;
+        margin: 0 !important;
+        align-items: center !important;
+    }
+
+    .github-desno {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important; 
+        margin-top: 15px !important;
+
+    }
+
+    .tekst-slika h1 {
+        font-size: 1.5rem;
+        margin-top: 130px;
+    }
+
+    .naredna-utakmica {
+        position: relative;
+        height: auto;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 10px;
+        gap: 15px;
+    }
+
+    .naredna-utakmica * {
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+        transform: none;
+        margin: 0;
+        line-height: 1.3;
+        text-align: center;
+        width: auto;
+    }
+
+    .naredna-utakmica h2, 
+    .naredna-utakmica h3 {
+        font-size: 1.4rem;
+        white-space: normal;
+    }
+
+    .naredna-utakmica span, 
+    .naredna-utakmica div.znacka { 
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    
+    .tajmer-kontejner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        max-width: 300px;
+        margin: 20px auto 0 auto;
+    }
+  
+    .timovi-tekst {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+        width: 100%;
+        position: static;
+        transform: none;
+    }
+
+    .timovi-tekst * { 
+        position: static !important; 
+        transform: none !important;
+        margin: 0;
+        line-height: 1.3;
+    }
+
+    .timovi-tekst h2, .timovi-tekst h3 {
+        font-size: 25px !important;
+    }
+
+    .vrijeme-box {
+        min-width: 80px;
+        padding: 10px;
+    }
+
+    .sadrzaj-kontejner, .sadrzaj2-kontejner {
+        padding-top: 190px; 
+        display: block; 
+    }
+
+    .sadrzaj2-kontejner {
+        margin-top: 100px;
+    }
+
+    .lijevi-meni, .glavni-sadrzaj, .desni-aside {
+        width: 100% !important;
+        margin: 0 0 20px 0;
+        box-sizing: border-box;
+    }
 }
