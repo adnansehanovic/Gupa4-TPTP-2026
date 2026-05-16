@@ -39,28 +39,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 1000); // 1000 milisekundi = 1 sekunda
 
-    // DARK MODE DUGME 
-    const modDugme = document.getElementById('mod-dugme');
-    const body = document.body;
-    //da li je korisnik prsli put ostavio tamni mod upaljen
-    if (modDugme) {
-        if (localStorage.getItem('tema') === 'tamna') {
-            body.classList.add('tamni-mod');
-            modDugme.textContent = '☀️'; // Postavljamo sunce jer je tamni mod aktivan
-        }
-        //dodavanje ili skidanje klsae tamni mod
-        modDugme.addEventListener('click', () => {
-            body.classList.toggle('tamni-mod');
-            //provjeravanje da li je tamni mod upaljne
-            if (body.classList.contains('tamni-mod')) {
-                localStorage.setItem('tema', 'tamna');
-                modDugme.textContent = '☀️'; //prebacit na sunce
-            } else {
-                localStorage.setItem('tema', 'svijetla');
-                modDugme.textContent = '🌙'; //ako nije vrati na mjesec
-            }
-        });
+// --- AUTOMATSKA DETEKCIJA MODA PREMA PRETRAŽIVAČU ---
+
+const modDugme = document.getElementById('mod-dugme');
+const body = document.body;
+
+// Čitamo da li postoji istorija klika i provjeravamo šta preferira sistem/browser
+const sacuvanaTema = localStorage.getItem('tema');
+const preferiraTamnuUPretrazivacu = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Ako ima istoriju 'tamna' ILI ako nema istoriju uopšte ali mu je Chrome u dark modu -> pali dark mode
+if (sacuvanaTema === 'tamna' || (!sacuvanaTema && preferiraTamnuUPretrazivacu)) {
+    body.classList.add('tamni-mod');
+    modDugme.textContent = '☀️'; 
+} else {
+    body.classList.remove('tamni-mod');
+    modDugme.textContent = '🌙'; 
+}
+
+// KLIK AKCIJA COVJEKA NA DUGME (Poništava automatiku)
+modDugme.addEventListener('click', () => {
+    body.classList.toggle('tamni-mod');
+    
+    if (body.classList.contains('tamni-mod')) {
+        localStorage.setItem('tema', 'tamna');
+        modDugme.textContent = '☀️'; 
+    } else {
+        localStorage.setItem('tema', 'svijetla');
+        modDugme.textContent = '🌙'; 
     }
+});
 
     // FILTRIRANJE KARTICA
     const buttons = document.querySelectorAll('.filter-btn');
