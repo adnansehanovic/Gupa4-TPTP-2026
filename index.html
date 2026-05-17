@@ -2,24 +2,23 @@
 <html> 
   <head>
     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title> FK Sloboda Tuzla </title>   <!-- title dodaje tekst u tabu -->
-<link rel="icon" type="image/png" href="SlobodaLogo.png"> <!-- link sluzi sa povezivanje sa vanjskim fajlom, rel icon nam govori da je to ikonica u tabu, type govori kakav je to tip ikonice u nasem slucaju slika png -->
+<link rel="icon" type="image/png" href="images/SlobodaLogo.png"> <!-- link sluzi sa povezivanje sa vanjskim fajlom, rel icon nam govori da je to ikonica u tabu, type govori kakav je to tip ikonice u nasem slucaju slika png -->
   </head>
 
 <body>
-<link rel="stylesheet" href="tptpstil.css"> <!-- povezivanje sa css -->
+<link rel="stylesheet" href="css/tptpstil.css"> <!-- povezivanje sa css -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"> <!-- povezivanje custom fonta -->
 
 <nav class="meni">                            <!-- klasifikovanje menija -->
     <div class="logo">                        <!-- klasifikovanje logo -->
-        <img src="SlobodaLogo.png" alt="Logo FK Sloboda">
+        <img src="images/SlobodaLogo.png" alt="Logo FK Sloboda">
     </div>
 
     <div class="linkovi">                 <!-- klasifikovanje linkova -->
         <a href="index.html">Početna</a>           <!-- dodavanje linkova, href salje na lokaciju -->
         <a href="sadrzaj.html">O Nama</a>
-        <a href="tim.html">Tim</a>
-        <a href="tabela.html">Tabela</a>
         <a href="kontakt.html">Kontakt</a>
     </div>
 
@@ -32,7 +31,7 @@
 
 
 <section class="slika">
-    <img src="tusanj6.jpg"  alt="Tusanj stadion">
+    <img src="images/tusanj6.jpg"  alt="Tusanj stadion">
 
       <div class="tekst-slika">
     <span class="mali-naslov">Zvanična WEB stranica</span>
@@ -109,17 +108,17 @@
         <main class="glavni-sadrzaj" id="kartice-grid">
            
             <div class="card" data-category="Rezultat">
-                <img src="poraz1.PNG" alt="Rezultat">
+                <img src="images/poraz1.PNG" alt="Rezultat">
                 <div class="card-sadrzaj">
                     <h4>Poraz u Konjicu</h4>
                     <p>Sloboda je kući otišla bez bodova u teškoj utakmici protiv Igman Konjica.</p>
-                    <a href="#">Pročitaj više</a>
+                    <a href="https://sportsport.ba/fudbal/fk-sloboda-fk-igman-ponisten-pogodak/520954">Pročitaj više</a>
                 </div>
             </div>
 
 
             <div class="card" data-category="Trening">
-                <img src="nikolatrening.PNG" alt="Trening">
+                <img src="images/nikolatrening.PNG" alt="Trening">
                 <div class="card-sadrzaj">
                     <h4>Galerija </h4>
                     <p>Zadnji trening pred utakmicu na Tušnju protiv Jedinstva iz Bihaća.</p>
@@ -129,17 +128,17 @@
 
 
             <div class="card" data-category="Trener">
-                <img src="adnanh1.jpg" alt="Trener">
+                <img src="images/adnanh1.jpg" alt="Trener">
                 <div class="card-sadrzaj">
                     <h4>Šef stručnog štaba</h4>
                     <p>Adnan Hodžić - Zadovoljan sam kako je ekipa odradila današnji trening.</p>
-                    <a href="#">Pročitaj više</a>
+                    <a href="https://fksloboda.ba/adnan-hodzic-novi-sef-strucnog-staba/">Pročitaj više</a>
                 </div>
             </div>
 
 
             <div class="card" data-category="Kapiten">
-                <img src="bega.jpeg" alt="Kapiten">
+                <img src="images/bega.jpeg" alt="Kapiten">
                 <div class="card-sadrzaj">
                     <h4>Kapiten ekipe</h4>
                     <p>Ajdin Beganović - Spremni smo za našu posljednju utakmicu u sezoni.</p>
@@ -149,7 +148,7 @@
 
 
             <div class="card" data-category="finale-kupa">
-                <img src="finalekupa.PNG" alt="finale-kupa">
+                <img src="images/finalekupa.PNG" alt="finale-kupa">
                 <div class="card-sadrzaj">
                     <h4>Juniori u OMLADINSKOM FINALU KUPA</h4>
                     <p>Naši juniori u utorak 5. Maj igraju FINALE OMLADINSKOG KUPA u Zenici</p>
@@ -159,7 +158,7 @@
 
 
             <div class="card" data-category="Skola-fudbala">
-                <img src="skolafudbala.PNG" alt="Skola-fudbala">
+                <img src="images/skolafudbala.PNG" alt="Skola-fudbala">
                 <div class="card-sadrzaj">
                     <h4>Upis u školu fudbala</h4>
                     <p>Od početka augusta počinje upis novih članova u školu fudbala.</p>
@@ -175,12 +174,9 @@
             <h3>Naš dom</h3>
             <p>Stadion Tušanj, mjesto gdje se ispisuje historija crveno-crnih.</p>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2830.404870503112!2d18.66579997677134!3d44.54228969830501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ea7a4198144bb%3A0xa97c9b36d65c3bb!2zU3RhZGlvbiBUdcWhYW5q!5e0!3m2!1sbs!2sba!4v1700000000000!5m2!1sbs!2sba"
-                width="100%"
-                height="250"
-                style="border:0;"
+                class="mapa-okvir"
+                src="https://maps.google.com/maps?q=Rudarska%20stadion%20Tu%C5%A1anj%20bb%2075000%20Tuzla%2C%20Bosnia%20and%20Herzegovina&t=m&z=15&output=embed&iwloc=near"
                 allowfullscreen=""
-                border-color="black"
                 loading="lazy">
             </iframe>
         </aside>
@@ -203,12 +199,7 @@
     <button id="mod-dugme" class="plivajuce-dugme">🌙</button>
 
 
-
-
-
-
-
-    <script src="skripta.js"></script>
+    <script src="js/tptpskripte.js"></script>
 
 </body>
 </html>
